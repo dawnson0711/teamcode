@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "239777843090",
+    "project_id": "malayboost",
+    "storage_bucket": "malayboost.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239777843090:android:7dc107337d57084f9ee34b",
+        "android_client_info": {
+          "package_name": "com.example.groupasg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR-djZNEi0aUsdlh6mTCYi6uQr7D54w7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

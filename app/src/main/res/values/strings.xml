@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">groupasg</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="back_to_login">back to login</string>
+    <string name="logout">logout</string>
+</resources>
