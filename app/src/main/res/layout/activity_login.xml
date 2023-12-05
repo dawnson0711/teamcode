@@ -29,7 +29,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="711dp"
+        android:layout_height="651dp"
         android:orientation="vertical">
 
         <Space
@@ -80,9 +80,9 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:visibility="gone"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -102,6 +102,21 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Login" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_forget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Forget Password?click here"
+                android:textSize="12sp"
+                android:textStyle="normal"/>
         </LinearLayout>
 
 

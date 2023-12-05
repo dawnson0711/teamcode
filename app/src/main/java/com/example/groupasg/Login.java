@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -19,12 +21,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
+
 public class Login extends AppCompatActivity {
 
     TextInputEditText et_email, et_password;
     Button buttonSignUp, buttonLogin;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
+    TextView tvForget;
 
     @Override
     public void onStart() {
@@ -50,7 +55,16 @@ public class Login extends AppCompatActivity {
         buttonSignUp = findViewById(R.id.bt_signup1);
         progressBar = findViewById(R.id.progressBar);
         buttonLogin = findViewById(R.id.bt_login);
+        tvForget = findViewById(R.id.tv_forget);
 
+        tvForget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(),forgetpassword.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,8 +97,10 @@ public class Login extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
-                                    Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+                                    Toast.makeText(getApplicationContext(),"Login Successfull",
+                                            Toast.LENGTH_SHORT).show();
+                                    Intent intent= new Intent(getApplicationContext(),
+                                            MainActivity.class);
                                     startActivity(intent);
                                     finish();
 
