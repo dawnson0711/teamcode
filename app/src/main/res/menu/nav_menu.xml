@@ -1,0 +1,18 @@
+<!-- res/menu/nav_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_learning_history"
+        android:title="Learning History" />
+    <item
+        android:id="@+id/nav_goals"
+        android:title="Goals" />
+    <item
+        android:id="@+id/nav_achievement"
+        android:title="Achievement" />
+    <item
+        android:id="@+id/nav_community"
+        android:title="Community" />
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Settings" />
+</menu>
