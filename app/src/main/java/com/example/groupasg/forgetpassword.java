@@ -33,11 +33,11 @@ public class forgetpassword extends AppCompatActivity {
         et_email=findViewById(R.id.email);
 
         mAuth = FirebaseAuth.getInstance();
-
+        //back to login button
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(getApplicationContext(), Register.class);
+                Intent intent= new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
                 finish();
             }
