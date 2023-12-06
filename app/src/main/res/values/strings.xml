@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">groupasg</string>
+    <!-- Application -->
+    <string name="app_name">Bahasa Boost</string>
+    <string name="app_logo_image_view_description">App Logo</string>
+    <string name="app_slogan">Bahasa Melambangkan Identiti Dan Martabat Yang Kukuh</string>
+
+    <!-- Login -->
     <string name="email">email</string>
     <string name="password">password</string>
     <string name="back_to_login">back to login</string>
