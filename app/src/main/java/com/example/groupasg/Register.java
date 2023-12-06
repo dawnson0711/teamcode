@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,17 +42,18 @@ public class Register extends AppCompatActivity {
             finish();
         }
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        //initializing variable
         mAuth = FirebaseAuth.getInstance();
         et_email = findViewById(R.id.email);
         et_password = findViewById(R.id.password);
         buttonReg = findViewById(R.id.bt_register);
         progressBar = findViewById(R.id.progressBar);
         tv_backtologin= findViewById(R.id.tv_backtologin);
+
 
         tv_backtologin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +63,26 @@ public class Register extends AppCompatActivity {
                 finish();
             }
         });
+        //password visibility
+        final TextInputEditText etPassword = findViewById(R.id.password);
+        final ImageButton btnTogglePasswordVisibility = findViewById(R.id.btnTogglePasswordVisibility);
+
+        btnTogglePasswordVisibility.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Toggle password visibility
+                if (etPassword.getTransformationMethod() == null) {
+                    // Password is visible, hide it
+                    etPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    btnTogglePasswordVisibility.setImageResource(R.drawable.baseline_remove_red_eye_24);
+                } else {
+                    // Password is hidden, show it
+                    etPassword.setTransformationMethod(null);
+                    btnTogglePasswordVisibility.setImageResource(R.drawable.baseline_visibility_off_24);
+                }
+            }
+        });
+        //Register Button
 
         buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override

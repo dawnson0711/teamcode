@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.method.PasswordTransformationMethod;
 import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +51,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //initializing variable
         mAuth = FirebaseAuth.getInstance();
         et_email = findViewById(R.id.email);
         et_password = findViewById(R.id.password);
@@ -57,6 +60,7 @@ public class Login extends AppCompatActivity {
         buttonLogin = findViewById(R.id.bt_login);
         tvForget = findViewById(R.id.tv_forget);
 
+        //forget password text
         tvForget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +69,7 @@ public class Login extends AppCompatActivity {
                 finish();
             }
         });
+        //button signup
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +78,28 @@ public class Login extends AppCompatActivity {
                 finish();
             }
         });
+        //password visibility
+        final TextInputEditText etPassword = findViewById(R.id.password);
+        final ImageButton btnTogglePasswordVisibility = findViewById(R.id.btnTogglePasswordVisibility);
 
+        btnTogglePasswordVisibility.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Toggle password visibility
+                if (etPassword.getTransformationMethod() == null) {
+                    // Password is visible, hide it
+                    etPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    btnTogglePasswordVisibility.setImageResource(R.drawable.baseline_remove_red_eye_24);
+                } else {
+                    // Password is hidden, show it
+                    etPassword.setTransformationMethod(null);
+                    btnTogglePasswordVisibility.setImageResource(R.drawable.baseline_visibility_off_24);
+                }
+            }
+        });
+
+
+        //Login Button
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
