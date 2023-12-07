@@ -17,7 +17,7 @@
             android:id="@+id/layoutToolBar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:background="@color/design_default_color_primary"
+            android:background="@color/primary"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="15dp"
@@ -32,10 +32,11 @@
                 app:tint="@color/white" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/header_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:outlineProvider="none"
                 android:text="BahasaBoost: Edisi Malay"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -69,5 +70,93 @@
         android:layout_gravity="start">
 
     </com.google.android.material.navigation.NavigationView>
+
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:clipToPadding="false"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <!-- Dictionary Button -->
+        <LinearLayout
+            android:id="@+id/layoutDictionary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/border_background"
+
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/dictionaryIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dictionary" />
+
+            <TextView
+                android:id="@+id/dictionaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dictionary"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <!-- Online Resources Button -->
+        <LinearLayout
+            android:id="@+id/layoutOnlineResources"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/border_background"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/onlineResourcesIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:src="@drawable/onlineres" />
+
+            <TextView
+                android:id="@+id/onlineResourcesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online Resources"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <!-- Other Material Button -->
+        <LinearLayout
+            android:id="@+id/layoutOtherMaterial"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/border_background"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/otherMaterialIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:src="@drawable/material" />
+
+            <TextView
+                android:id="@+id/otherMaterialText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other Material"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

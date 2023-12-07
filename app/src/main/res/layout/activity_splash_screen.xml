@@ -42,11 +42,12 @@
 
         <ImageView
             android:id="@+id/app_logo"
-            android:layout_width="100dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:contentDescription="@string/app_logo_image_view_description"
             android:src="@drawable/app_logo"
+            android:background="@android:color/transparent"
             android:visibility="invisible" />
 
         <TextView
